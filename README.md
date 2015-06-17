@@ -1,8 +1,10 @@
 # spark-hadoop
-A simple application created to test the performance of [spark](http://spark.apache.org) and traditional map reduce on a Pseudo Distributed [Hadoop](http://hadoop.apache.org) cluster. The dataset used is download from [NetIndex](http://netindex.com). For the scope of this project, extract the dataset zip to this project folder
+A simple application created to test the performance of [spark](http://spark.apache.org) and traditional map reduce on a Pseudo Distributed [Hadoop](http://hadoop.apache.org) cluster. The dataset used is downloaded from [NetIndex](http://netindex.com). We are going to calculate maximum download speed by country.
 
 ## Perform the test on your own?
-I have taken the file **city_speeds_daily.csv** which sized to 2.4GB. Some kind of wrangling had to be done to maintain the simplicity of the project. The problems regarding encoding were taken care by the file *eliminate_malformed_data.py*. It is a humble request that you execute the file as following
+For the scope of this project, extract the dataset zip to this project folder.
+
+I have taken the file **city_speeds_daily.csv** which sized to 2.4GB. Some kind of wrangling had to be done to maintain the simplicity of the project. The problems regarding encoding were taken care by the script *eliminate_malformed_data.py*. It is a humble request that you execute the script before running the project.
 
 ```sh
 cat city_daily_speeds.csv | python eliminate_malformed_data.py
@@ -35,7 +37,7 @@ First, check the file sparking.py. Find the definition of the variable *speeds_f
 ```python
 speeds_file = "/user/anish/indata/filtered_speeds.csv"
 ```
-Edit this value so that it points exactly to the filtered_speeds.csv we have copied from local storage.
+Edit this value so that it points exactly to the filtered_speeds.csv on the HDFS.
 
 Now, execute
 ```sh
