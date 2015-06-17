@@ -11,7 +11,8 @@ cat city_daily_speeds.csv | python eliminate_malformed_data.py
 This creates a new file called filtered_speeds.csv, which is free of all encoding problems. Now, all we have to do is copy the file to the hadoop cluster. Make sure it is running and execute the following after you are in the hadoop root folder
 
 ```sh
-bin/hdfs dfs -copyFromLocal /local/path/to/netindex/filtered_speeds.csv /user/awesome/indata/filtered_speeds.csv
+bin/hdfs dfs -copyFromLocal /local/path/to/netindex/filtered_speeds.csv \ 
+/user/awesome/indata/filtered_speeds.csv
 ```
 Now that the data exists in the cluster, we are ready to perform analysis.
 
